@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
-class AuthenticationController {
+public class AuthenticationController {
     private final UserService userService;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)

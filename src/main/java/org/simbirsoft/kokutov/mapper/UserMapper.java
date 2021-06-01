@@ -22,10 +22,7 @@ public class UserMapper {
         UserDto userDto = new UserDto();
         userDto.setId( user.getId() );
         userDto.setUsername( user.getUsername() );
-        Set<Role> set = user.getRoles();
-        if ( set != null ) {
-            userDto.setRoles(new HashSet<>(set) );
-        }
+        userDto.setRole(user.getRole().toString());
 
         return userDto;
     }

@@ -6,6 +6,7 @@ import org.simbirsoft.kokutov.config.filter.JwtHelper;
 import org.simbirsoft.kokutov.dto.LoginForm;
 import org.simbirsoft.kokutov.dto.RegisterForm;
 import org.simbirsoft.kokutov.dto.TokenDto;
+import org.simbirsoft.kokutov.dto.UpdateForm;
 import org.simbirsoft.kokutov.exceptions.InvalidTokenException;
 import org.simbirsoft.kokutov.exceptions.NotFoundException;
 import org.simbirsoft.kokutov.mapper.UserMapper;
@@ -24,7 +25,6 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
     private final JwtHelper jwtHelper;
     private final UserRepository userRepository;
-    private final UserMapper userMapper;
 
     @Override
     public User getByAuthToken(String token) {
@@ -53,11 +53,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public TokenDto update(UpdateForm updateForm, User user) {
+        user.setUsername(updateForm.getUsername());
+        user.setPassword(updateForm.getPassword());
+        userRepository.save(user);
+        return new TokenDto(jwtHelper.generateToken(user));
+    }
+
+    @Override
+    public void delete(User user) {
+        userRepository.delete(user);
+    }
+
+    @Override
     public TokenDto register(RegisterForm form) {
         User user = User.builder()
                 .username(form.getUsername())
                 .password(form.getPassword())
-                .roles(Collections.singleton(Role.ROLE_USER))
+                .role(Role.ROLE_USER)
                 .build();
         User savedUser = userRepository.save(user);
         return new TokenDto(jwtHelper.generateToken(savedUser));
