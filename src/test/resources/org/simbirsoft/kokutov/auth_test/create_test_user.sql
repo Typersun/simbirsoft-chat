@@ -1,1 +1,1 @@
-insert into users(id, username, password, role) values (1, 'Gilgamesh', 'Enkidu', 'ROLE_USER');
+insert into users(id, username, password, role) values (100, 'Gilgamesh', 'Enkidu', 'ROLE_USER');

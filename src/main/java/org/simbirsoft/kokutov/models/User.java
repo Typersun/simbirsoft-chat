@@ -14,13 +14,16 @@ import java.util.Set;
 @Builder
 @Entity
 @Table(name = "users")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(nullable = false, unique = true)
     @Size(min = 6, max = 80)
+    @EqualsAndHashCode.Include
     private String username;
 
     @Column(nullable = false)
@@ -36,7 +39,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @ManyToMany(mappedBy = "participants", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "participants", fetch = FetchType.EAGER)
     private Set<Room> rooms = new HashSet<>();
 
 }

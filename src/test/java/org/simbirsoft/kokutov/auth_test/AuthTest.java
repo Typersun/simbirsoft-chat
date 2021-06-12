@@ -43,9 +43,7 @@ public class AuthTest {
     @Test
     public void registrationTest() throws Exception {
         //given
-        RegisterForm registerForm = new RegisterForm();
-        registerForm.setUsername("Nebuchadnezzar the Great");
-        registerForm.setPassword("Babylon");
+        RegisterForm registerForm = new RegisterForm("Nebuchadnezzar the Great", "Babylon");
         //when
         this.mockMvc.perform(post("/register")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -59,9 +57,8 @@ public class AuthTest {
     @Sql(value = {"create_test_user.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     public void loginTest() throws Exception {
         //given
-        LoginForm loginForm = new LoginForm();
-        loginForm.setUsername("Gilgamesh");
-        loginForm.setPassword("Enkidu");
+        LoginForm loginForm = new LoginForm("Gilgamesh", "Enkidu");
+
         TokenDto expectedToken = new TokenDto("eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6IkdpbGdhbWVzaCIsInBhc3N3b3JkIjoiRW5raWR1In0.rEpK6yd7ExiEIws56xn-B17LNnyXYTH-eHyVIgsACVAiuNM-K6goSsvBSsXBzHDt6aTRoop7yRVOexgzbMIJzw");
         //when
         this.mockMvc.perform(post("/auth")

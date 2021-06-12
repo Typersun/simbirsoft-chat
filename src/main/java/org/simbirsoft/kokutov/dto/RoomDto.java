@@ -3,11 +3,12 @@ package org.simbirsoft.kokutov.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.simbirsoft.kokutov.models.User;
 
 @Getter
 @Setter
 @AllArgsConstructor
-public class LoginForm {
-    private String username;
-    private String password;
+public class RoomDto {
+    private String RoomName;
+    private User owner;
 }
