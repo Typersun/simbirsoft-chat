@@ -1,9 +1,8 @@
 package org.simbirsoft.kokutov.controller;
 
 import lombok.AllArgsConstructor;
-import org.simbirsoft.kokutov.dto.LoginForm;
-import org.simbirsoft.kokutov.dto.TokenDto;
-import org.simbirsoft.kokutov.dto.UpdateForm;
+import org.simbirsoft.kokutov.dto.user.TokenDto;
+import org.simbirsoft.kokutov.dto.user.UpdateForm;
 import org.simbirsoft.kokutov.mapper.UserMapper;
 import org.simbirsoft.kokutov.models.User;
 import org.simbirsoft.kokutov.services.UserService;

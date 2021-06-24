@@ -1,6 +1,5 @@
-package org.simbirsoft.kokutov.dto;
+package org.simbirsoft.kokutov.dto.room;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

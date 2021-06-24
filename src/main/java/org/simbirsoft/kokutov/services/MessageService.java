@@ -1,7 +1,7 @@
 package org.simbirsoft.kokutov.services;
 
 
-import org.simbirsoft.kokutov.dto.MessageDto;
+import org.simbirsoft.kokutov.dto.message.MessageDto;
 import org.simbirsoft.kokutov.models.User;
 
 public interface MessageService {

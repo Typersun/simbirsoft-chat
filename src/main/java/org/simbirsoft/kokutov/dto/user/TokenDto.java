@@ -1,4 +1,4 @@
-package org.simbirsoft.kokutov.dto;
+package org.simbirsoft.kokutov.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

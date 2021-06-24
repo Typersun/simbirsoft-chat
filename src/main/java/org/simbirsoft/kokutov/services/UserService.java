@@ -1,9 +1,9 @@
 package org.simbirsoft.kokutov.services;
 
-import org.simbirsoft.kokutov.dto.LoginForm;
-import org.simbirsoft.kokutov.dto.RegisterForm;
-import org.simbirsoft.kokutov.dto.TokenDto;
-import org.simbirsoft.kokutov.dto.UpdateForm;
+import org.simbirsoft.kokutov.dto.user.LoginForm;
+import org.simbirsoft.kokutov.dto.user.RegisterForm;
+import org.simbirsoft.kokutov.dto.user.TokenDto;
+import org.simbirsoft.kokutov.dto.user.UpdateForm;
 import org.simbirsoft.kokutov.models.User;
 
 public interface UserService {

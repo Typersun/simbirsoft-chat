@@ -4,23 +4,20 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.simbirsoft.kokutov.controller.AuthenticationController;
-import org.simbirsoft.kokutov.dto.LoginForm;
-import org.simbirsoft.kokutov.dto.RegisterForm;
-import org.simbirsoft.kokutov.dto.TokenDto;
+import org.simbirsoft.kokutov.dto.user.LoginForm;
+import org.simbirsoft.kokutov.dto.user.RegisterForm;
+import org.simbirsoft.kokutov.dto.user.TokenDto;
 import org.simbirsoft.kokutov.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
@@ -45,7 +42,7 @@ public class AuthTest {
         //given
         RegisterForm registerForm = new RegisterForm("Nebuchadnezzar the Great", "Babylon");
         //when
-        this.mockMvc.perform(post("/register")
+        mockMvc.perform(post("/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(registerForm)));
         //then

@@ -1,9 +1,9 @@
 package org.simbirsoft.kokutov.controller;
 
 import lombok.AllArgsConstructor;
-import org.simbirsoft.kokutov.dto.LoginForm;
-import org.simbirsoft.kokutov.dto.RegisterForm;
-import org.simbirsoft.kokutov.dto.TokenDto;
+import org.simbirsoft.kokutov.dto.user.LoginForm;
+import org.simbirsoft.kokutov.dto.user.RegisterForm;
+import org.simbirsoft.kokutov.dto.user.TokenDto;
 import org.simbirsoft.kokutov.services.UserService;
 import org.springframework.web.bind.annotation.*;
 

@@ -3,20 +3,18 @@ package org.simbirsoft.kokutov.services.impl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.simbirsoft.kokutov.config.filter.JwtHelper;
-import org.simbirsoft.kokutov.dto.LoginForm;
-import org.simbirsoft.kokutov.dto.RegisterForm;
-import org.simbirsoft.kokutov.dto.TokenDto;
-import org.simbirsoft.kokutov.dto.UpdateForm;
+import org.simbirsoft.kokutov.dto.user.LoginForm;
+import org.simbirsoft.kokutov.dto.user.RegisterForm;
+import org.simbirsoft.kokutov.dto.user.TokenDto;
+import org.simbirsoft.kokutov.dto.user.UpdateForm;
 import org.simbirsoft.kokutov.exceptions.InvalidTokenException;
 import org.simbirsoft.kokutov.exceptions.NotFoundException;
-import org.simbirsoft.kokutov.mapper.UserMapper;
 import org.simbirsoft.kokutov.models.Role;
 import org.simbirsoft.kokutov.models.User;
 import org.simbirsoft.kokutov.repository.UserRepository;
 import org.simbirsoft.kokutov.services.UserService;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.Optional;
 
 @Service
@@ -28,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getByAuthToken(String token) {
-        if (token == null || jwtHelper.validateToken(token) == false) {
+        if (token == null || !jwtHelper.validateToken(token)) {
             throw new InvalidTokenException("Invalid token or token header not found");
         }
         String username = jwtHelper.getUsernameFromToken(token);
@@ -36,7 +34,7 @@ public class UserServiceImpl implements UserService {
         if(optionalUser.isPresent()) {
             User user = optionalUser.get();
             String tokenPassword = jwtHelper.getPasswordFromToken(token);
-            if(tokenPassword.equals(user.getPassword()) == false) {
+            if(!tokenPassword.equals(user.getPassword())) {
                 throw new InvalidTokenException("Wrong password");
             }
             return optionalUser.get();

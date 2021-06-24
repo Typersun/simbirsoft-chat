@@ -1,12 +1,11 @@
 package org.simbirsoft.kokutov.controller;
 
 import lombok.AllArgsConstructor;
-import org.simbirsoft.kokutov.dto.MessageDto;
-import org.simbirsoft.kokutov.dto.ResponseMessageDto;
+import org.simbirsoft.kokutov.dto.message.MessageDto;
+import org.simbirsoft.kokutov.dto.message.ResponseMessageDto;
 import org.simbirsoft.kokutov.models.User;
 import org.simbirsoft.kokutov.services.MessageService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;

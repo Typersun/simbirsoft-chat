@@ -5,13 +5,11 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@EqualsAndHashCode
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

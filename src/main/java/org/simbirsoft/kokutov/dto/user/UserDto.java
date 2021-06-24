@@ -1,9 +1,6 @@
-package org.simbirsoft.kokutov.dto;
+package org.simbirsoft.kokutov.dto.user;
 
 import lombok.*;
-import org.simbirsoft.kokutov.models.Role;
-
-import java.util.Set;
 
 @Getter
 @Setter

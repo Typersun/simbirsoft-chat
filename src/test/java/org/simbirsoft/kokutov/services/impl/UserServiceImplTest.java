@@ -1,6 +1,5 @@
 package org.simbirsoft.kokutov.services.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,10 +8,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.simbirsoft.kokutov.config.filter.JwtHelper;
-import org.simbirsoft.kokutov.dto.LoginForm;
-import org.simbirsoft.kokutov.dto.RegisterForm;
-import org.simbirsoft.kokutov.dto.TokenDto;
-import org.simbirsoft.kokutov.dto.UpdateForm;
+import org.simbirsoft.kokutov.dto.user.LoginForm;
+import org.simbirsoft.kokutov.dto.user.RegisterForm;
+import org.simbirsoft.kokutov.dto.user.TokenDto;
+import org.simbirsoft.kokutov.dto.user.UpdateForm;
 import org.simbirsoft.kokutov.exceptions.InvalidTokenException;
 import org.simbirsoft.kokutov.exceptions.NotFoundException;
 import org.simbirsoft.kokutov.models.Role;

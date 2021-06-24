@@ -7,9 +7,9 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.simbirsoft.kokutov.dto.ConnectToRoomDto;
-import org.simbirsoft.kokutov.dto.RoomNameDto;
-import org.simbirsoft.kokutov.dto.RoomRenameDto;
+import org.simbirsoft.kokutov.dto.room.ConnectToRoomDto;
+import org.simbirsoft.kokutov.dto.room.RoomNameDto;
+import org.simbirsoft.kokutov.dto.room.RoomRenameDto;
 import org.simbirsoft.kokutov.exceptions.AlreadyExistsException;
 import org.simbirsoft.kokutov.exceptions.ForbiddenActionException;
 import org.simbirsoft.kokutov.exceptions.NotFoundException;
@@ -39,10 +39,10 @@ class RoomServiceImplTest {
     @Mock
     private RoomRepository roomRepository;
 
-    private RoomNameDto roomNameDto = new RoomNameDto();
+    private final RoomNameDto roomNameDto = new RoomNameDto();
     private RoomRenameDto roomRenameDto;
     private User user;
-    private ConnectToRoomDto connectToRoomDto = new ConnectToRoomDto();
+    private final ConnectToRoomDto connectToRoomDto = new ConnectToRoomDto();
 
 
     @BeforeEach

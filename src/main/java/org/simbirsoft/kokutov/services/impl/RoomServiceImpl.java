@@ -2,10 +2,9 @@ package org.simbirsoft.kokutov.services.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.simbirsoft.kokutov.dto.ConnectToRoomDto;
-import org.simbirsoft.kokutov.dto.RoomDto;
-import org.simbirsoft.kokutov.dto.RoomNameDto;
-import org.simbirsoft.kokutov.dto.RoomRenameDto;
+import org.simbirsoft.kokutov.dto.room.ConnectToRoomDto;
+import org.simbirsoft.kokutov.dto.room.RoomNameDto;
+import org.simbirsoft.kokutov.dto.room.RoomRenameDto;
 import org.simbirsoft.kokutov.exceptions.AlreadyExistsException;
 import org.simbirsoft.kokutov.exceptions.ForbiddenActionException;
 import org.simbirsoft.kokutov.exceptions.NotFoundException;
@@ -14,10 +13,8 @@ import org.simbirsoft.kokutov.models.Room;
 import org.simbirsoft.kokutov.models.User;
 import org.simbirsoft.kokutov.repository.RoomRepository;
 import org.simbirsoft.kokutov.services.RoomService;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 

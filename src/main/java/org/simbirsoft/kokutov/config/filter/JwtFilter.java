@@ -7,7 +7,6 @@ import org.simbirsoft.kokutov.models.Role;
 import org.simbirsoft.kokutov.models.User;
 import org.simbirsoft.kokutov.services.UserService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
@@ -18,7 +17,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Collections;
 
 import static org.springframework.util.StringUtils.hasText;

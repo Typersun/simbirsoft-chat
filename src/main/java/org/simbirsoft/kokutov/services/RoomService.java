@@ -1,9 +1,8 @@
 package org.simbirsoft.kokutov.services;
 
-import org.simbirsoft.kokutov.dto.ConnectToRoomDto;
-import org.simbirsoft.kokutov.dto.RoomDto;
-import org.simbirsoft.kokutov.dto.RoomNameDto;
-import org.simbirsoft.kokutov.dto.RoomRenameDto;
+import org.simbirsoft.kokutov.dto.room.ConnectToRoomDto;
+import org.simbirsoft.kokutov.dto.room.RoomNameDto;
+import org.simbirsoft.kokutov.dto.room.RoomRenameDto;
 import org.simbirsoft.kokutov.models.User;
 
 public interface RoomService {

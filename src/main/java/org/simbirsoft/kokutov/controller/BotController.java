@@ -1,10 +1,12 @@
 package org.simbirsoft.kokutov.controller;
 
 import lombok.AllArgsConstructor;
-import org.simbirsoft.kokutov.dto.*;
+import org.simbirsoft.kokutov.dto.room.ConnectToRoomDto;
+import org.simbirsoft.kokutov.dto.message.ResponseMessageDto;
+import org.simbirsoft.kokutov.dto.room.RoomNameDto;
+import org.simbirsoft.kokutov.dto.room.RoomRenameDto;
 import org.simbirsoft.kokutov.models.User;
 import org.simbirsoft.kokutov.services.RoomService;
-import org.simbirsoft.kokutov.services.impl.RoomServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
